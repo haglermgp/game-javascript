@@ -1,0 +1,33 @@
+{
+  "name": "game-javascript",
+  "version": "1.0.0",
+  "description": "game for learn basic logic programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haglermgp/game-javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11"
+  },
+  "bugs": {
+    "url": "https://github.com/haglermgp/game-javascript/issues"
+  },
+  "homepage": "https://github.com/haglermgp/game-javascript#readme"
+}
