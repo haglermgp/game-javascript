@@ -28,5 +28,5 @@ var gulp = require('gulp'),
     gulp.task('watch',['browserSync', 'styles'], function() {
       gulp.watch('game/sass/**/*.sass', ['styles']);
       gulp.watch('game/index.html', browserSync.reload);
-      gulp.watch('game/js/app.js', browserSync.reload);
+      gulp.watch('game/js/*.js', browserSync.reload);
     });
