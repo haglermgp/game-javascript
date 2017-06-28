@@ -27,8 +27,7 @@ var inicio  = () =>{
 	// }
 
 	// //USER RIGHT
-	function usuario(){
-		camino();
+	function usuarioRight(){
 		ctx.beginPath();
 		ctx.moveTo(155,235); //(x+5 , y+5) esquina base 1 derecha
 		ctx.lineTo(155,265); //(x+5, y+35) esquina base 2 izquierda
@@ -38,15 +37,14 @@ var inicio  = () =>{
 	}
 
 	// //USER LEFT
-	// function usuario(){
-	// 	camino();
-	// 	ctx.beginPath();
-	// 	ctx.moveTo(185,235); //(x+35 , y+5) esquina base 1 derecha
-	// 	ctx.lineTo(185,265); //(x+35, y+35) esquina base 2 izquierda
-	// 	ctx.lineTo(155,250); //(x+5, y+20) esquina direccion left
-	// 	ctx.fillStyle='black';
-	// 	ctx.fill();
-	// }
+	function usuarioLeft(){
+		ctx.beginPath();
+		ctx.moveTo(185,235); //(x+35 , y+5) esquina base 1 derecha
+		ctx.lineTo(185,265); //(x+35, y+35) esquina base 2 izquierda
+		ctx.lineTo(155,250); //(x+5, y+20) esquina direccion left
+		ctx.fillStyle='black';
+		ctx.fill();
+	}
 
 	//Creando Camino
 	function camino(){
@@ -76,11 +74,31 @@ var inicio  = () =>{
 	}
 
 	// NOTE: FUNCTIONS COMANDS
+	function Move() {
+		this.left 	= left
+		this.right  = right
+		this.up		  = up
+		this.down		= down
+	}
 
+	function left() {
+
+	}
+
+	function right() {
+
+	}
+
+	function up() {
+
+	}
+
+	function down() {
+
+	}
 
 
 	camino();
-	usuario()
 }
 inicio();
 
