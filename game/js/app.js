@@ -82,9 +82,6 @@ var inicio  = () =>{
 		//this part reload initial degrees value when the rotation pass by position intial
 	}
 
-	degrees
-
-
 	function Move() {
 
 	//MOVEMENT IN X
@@ -110,21 +107,21 @@ var inicio  = () =>{
 
 	}
 
-
-
 	camino();
 	// draw a rotated rect
-
 
 	// Rotate('left')
 
 	Rotate('left')
 	console.log('determinamos la direccion: ' + degrees);
-	Move()
-		debugger;
-	Move()
-	Move()
-
+	// Move()
+	// Move()
+	// Move()
+	// Rotate('right')
+	// Move()
+	// Move()
+	// Move()
+	// Move()
 
 	Rotated("yellow", startX, startY, a, b);
 

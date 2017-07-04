@@ -22,6 +22,7 @@ var gulp = require('gulp'),
         server: {
           baseDir: 'game'
         },
+        port : 8080
       })
     })
 
