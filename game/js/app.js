@@ -82,7 +82,8 @@ var inicio  = () =>{
 		//this part reload initial degrees value when the rotation pass by position intial
 	}
 
-	function Move() {
+	//function that makes moving on objectUser
+	function Move(degrees) {
 
 	//MOVEMENT IN X
 		if (degrees == 0) {
@@ -107,73 +108,91 @@ var inicio  = () =>{
 	//CONTROLS
 
 	function programList() {
-		this.head = new Node('head')
-		this.head.next = this.head
-		this.find = find
-		this.insert = insert
-		this.remove = remove
-		this.display = display
-		this.findPrevious = findPrevious
-		this.findLast = findLast
-		this.dispReverse = dispReverse
+	  this.add = add
+	  this.datastore = new Array()
+	  this.find = find
+	  this.remove = remove
+	  this.showAll = showAll
+	  this.clear = clear
+	  this.count = count
 	}
 
-	function Node(element) {
-		this.element = element
-		this.next = null
-		this.previous = null
+	function add(key, value) {
+	  this.datastore[key] = value
 	}
 
-	function find(item) {
-		var currNode = this.head
-		while (currNode.element != item){
-			currNode = currNode.next
-		}
-		return currNode
+	function find(key) {
+	  return this.datastore[key]
 	}
 
-	function insert(newElement, item) {
-		var newNode = new Node(newElement)
-	  var current = this.find(item)
-
-	  newNode.next = current.next
-	  newNode.previous = current
-	  current.next = newNode
-
+	function remove(key) {
+	  delete this.datastore[key] // >> the DELETE operator removes a property from an object
 	}
 
-	function display() {
-	  var currNode = this.head
-	  while (!(currNode.next == null)) {
-	    console.log(currNode.next.element);
-	    currNode = currNode.next
+	function clear() {
+	  for (var key in this.datastore) {
+	    if (this.datastore.hasOwnProperty(key)) {
+	      delete this.datastore[key]
+	    }
 	  }
 	}
 
-	function remove(item) {
-	  var currNode = this.find(item)
-	  if (!(currNode.next == null)) {
-	    currNode.previous.next = currNode.next // this instance to himself through previous.next property
-	    currNode.next.previous = currNode.previous // this same
-	    currNode.next = null
-	    currNode.previous = null
+	function showAll() {
+
+	  for (var key of this.datastore) {
+	    console.log("the key are sort >> " + key + " >> the value " + this.datastore[key]);
 	  }
 	}
 
+	function count() {
+	  var n = 0
+	  for (var key in this.datastore) {
+	    ++n
+	  }
+	  return n
+	}
+
+	//this List ad a dictionary save all the steeps that we want the objectUser to do
 	var programStack = new programList()
 
-	
-
-
+			console.log(programStack.count());
 
 	var buttonLeft = document.getElementById('dirLeft'),
 			buttonRight = document.getElementById('dirRight'),
 			buttonMove = document.getElementById('moveOn');
-			buttonLeft.addEventListener('click', function () {
-			});
 
+	//declare watchButtons, self-invoking function, that watch what button has been clicked
+	(function watchButtons() {
+		var countKey = programStack.count()
+
+		//directions
+		buttonLeft.addEventListener('click', function () {
+			programStack.add(countKey, 'left')
+			++countKey
+		});
+
+		buttonRight.addEventListener('click', function () {
+			console.log('add one right');
+			programStack.add(countKey, 'right')
+			++countKey
+		});
+
+		//move
+		buttonMove.addEventListener('click', function () {
+			console.log('add one move');
+			programStack.add(countKey, 'degrees')
+			++countKey
+		});
+
+	})()
+
+	//whit this code, we debugger if the programStack are save all the function we passed on 
+	// buttonLeft.addEventListener('click', function () {
+	// 	console.log(programStack);
+	// })
 
 	camino();
+
 
 	ObjectUser("red", startX, startY, a, b);
 
