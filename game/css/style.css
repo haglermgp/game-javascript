@@ -3,3 +3,13 @@ body {
 
 canvas {
   background: #d5fbf3; }
+
+.header {
+  display: flex;
+  justify-content: center; }
+  .header h1 {
+    color: white; }
+
+.main {
+  display: flex;
+  justify-content: space-between; }
