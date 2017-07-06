@@ -164,38 +164,46 @@ var inicio  = () =>{
 	//declare watchButtons, self-invoking function, that watch what button has been clicked
 	(function watchButtons() {
 		var countKey = programStack.count()
+		var row = document.getElementById('listButtons')
 
 		//directions
 		buttonLeft.addEventListener('click', function () {
 			programStack.add(countKey, 'left')
+			let rowCell = row.insertCell(-1)
+			rowCell.innerHTML = '<li><button> icoLeft </button></li>'
 			++countKey
 		});
 
 		buttonRight.addEventListener('click', function () {
-			console.log('add one right');
 			programStack.add(countKey, 'right')
+			let rowCell = row.insertCell(-1)
+			rowCell.innerHTML = '<button> icoRight </button>'
 			++countKey
 		});
 
 		//move
 		buttonMove.addEventListener('click', function () {
-			console.log('add one move');
 			programStack.add(countKey, 'degrees')
+			let rowCell = row.insertCell(-1)
+			rowCell.innerHTML = '<button> Move </button>'
 			++countKey
 		});
 
 	})()
 
-	//whit this code, we debugger if the programStack are save all the function we passed on 
+
+
+
+
+
+	//whit this code, we debugger if the programStack are save all the function we passed on
 	// buttonLeft.addEventListener('click', function () {
 	// 	console.log(programStack);
 	// })
 
 	camino();
 
-
 	ObjectUser("red", startX, startY, a, b);
-
 
 }
 inicio();
