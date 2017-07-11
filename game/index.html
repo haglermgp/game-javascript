@@ -3,17 +3,21 @@
 <head>
 	<title>Programando!</title>
   <link rel="stylesheet" href="/css/style.css">
+	 <script type="text/javascript" src="js/canvas.js"> </script>
+
 </head>
 <body>
 	<!-- <div class="header">
 		<h1>Game of programing</h1>
 	</div> -->
-	<div class="control">
+	<!-- <div class="control">
 		<button id="dirLeft" type="button" name="button">Left</button>
 		<button id="dirRight" type="button" name="button">Right</button>
 		<button id="moveOn" type="button" name="button">Move</button>
-	</div>
-	<div class="main">
+		<button id="start" type="button" name="button" style="background: rgb(93, 231, 165)">Start</button>
+		<button id="moveOn" type="button" name="button">Stop</button>
+	</div> -->
+	<!-- <div class="main">
 		<div class="">
 			<canvas id="Canvas" width="800" height="500" style="border: 1px solid white"></canvas>
 		</div>
@@ -24,8 +28,15 @@
 
 			</tr>
 		</table>
-	</div>
+	</div> -->
 
-  <script type="text/javascript" src="js/app.js"> </script>
+
+	<script type="text/javascript">
+		var bodys = document.body;
+		var simpleLevel = new Level(simpleLevelPlan);
+		var display = new DOMDisplay(bodys, simpleLevel);
+	</script>
+  <!-- <script type="text/javascript" src="js/app.js"> </script> -->
+
 </body>
 </html>

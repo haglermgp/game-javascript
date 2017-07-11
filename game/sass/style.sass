@@ -1,17 +1,53 @@
-body
-  background: rgb(20, 31, 51)
+// body
+//   background: rgb(20, 31, 51)
+//
+// canvas
+//   background: rgb(213, 251, 243)
+//
+// .header
+//   display: flex
+//   justify-content: center
+//   h1
+//     color: white
+//
+// .main
+//   display: flex
+//   justify-content: space-between
+//
+// .control
 
-canvas
-  background: rgb(213, 251, 243)
 
-.header
-  display: flex
-  justify-content: center
-  h1
-    color: white
+.background
+  background: rgb(52, 166, 251)
+  table-layout: fixed
+  border-spacing: 0
 
-.main
-  display: flex
-  justify-content: space-between
+.background td
+  padding: 0
 
-.control
+.lava
+  background: rgb(255, 100, 100)
+
+.wall
+  background: white
+
+.actor
+  position: absolute
+
+.coin
+  background: rgb(241, 229, 89)
+
+.player
+  background: rgb(64, 64, 64)
+
+.lost .player
+  background: rgb(160, 64, 64)
+
+.won .player
+  box-shadow: -4px -7px 8px white, 4px -7px 8px white
+
+.game
+  overflow: hidden
+  max-width: 600px
+  max-height: 450px
+  position: relative
